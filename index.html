@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DJ Press Kit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'Helvetica', 'Arial', 'sans-serif'],
+              mono: ['Courier New', 'Courier', 'monospace'],
+            },
+            colors: {
+              zinc: {
+                850: '#1f1f22',
+                950: '#09090b',
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #000;
+        color: #fff;
+      }
+      .glitch-hover:hover {
+        text-shadow: 2px 0 #fff, -2px 0 #ff00c1;
+      }
+
+      @media print {
+        @page {
+          margin: 1.5cm;
+          size: A4 portrait;
+        }
+        body {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+          color-adjust: exact !important;
+          background-color: #000 !important;
+          color: #fff !important;
+        }
+        /* Hide interactive elements */
+        nav, button, .no-print, .print\\:hidden {
+          display: none !important;
+        }
+        /* Ensure layout works on paper */
+        header {
+          height: 100vh !important;
+          page-break-after: always;
+          display: flex !important;
+        }
+        section {
+          page-break-inside: auto !important;
+          padding: 1.5rem 1rem !important;
+        }
+        /* Bio section - keep together and force page break after */
+        #bio section {
+          page-break-after: always !important;
+          margin-bottom: 3rem !important;
+        }
+        /* Blockquote - allow break before if needed */
+        blockquote {
+          page-break-inside: avoid !important;
+          page-break-before: auto !important;
+          margin-top: 1rem !important;
+        }
+        /* Music section - start on new page */
+        #music {
+          page-break-before: always !important;
+        }
+        /* Gallery section - start on new page */
+        #gallery {
+          page-break-before: always !important;
+        }
+        /* Rider section - start on new page */
+        #rider {
+          page-break-before: always !important;
+        }
+        /* Gallery - compact grid for print */
+        #gallery section > div:last-child {
+          display: grid !important;
+          grid-template-columns: repeat(3, 1fr) !important;
+          gap: 0.5rem !important;
+          page-break-inside: avoid !important;
+        }
+        #gallery section > div:last-child > div {
+          aspect-ratio: 1 / 1 !important;
+          height: auto !important;
+          page-break-inside: avoid !important;
+        }
+        #gallery section > div:last-child > div img {
+          height: 100% !important;
+          object-fit: cover !important;
+        }
+        /* Booking section - start on new page */
+        #booking {
+          page-break-before: always !important;
+        }
+        /* Music, Rider, Booking - keep compact */
+        #music section,
+        #rider section,
+        #booking section {
+          page-break-before: auto;
+          page-break-after: auto;
+        }
+        /* Force black backgrounds */
+        .bg-black, .bg-zinc-900, .bg-zinc-950 {
+          background-color: #000 !important;
+        }
+        .bg-zinc-900\\/50, .bg-zinc-900\\/30 {
+          background-color: #1a1a1a !important;
+        }
+        /* Ensure borders are visible */
+        .border-zinc-800, .border-zinc-900 {
+          border-color: #333 !important;
+        }
+        /* Ensure text is readable and links are clickable */
+        a {
+          text-decoration: underline !important;
+          color: #a78bfa !important;
+        }
+        a[href^="mailto:"] {
+          color: #a78bfa !important;
+        }
+        a[href^="http"] {
+          color: #60a5fa !important;
+        }
+        /* Make text selectable */
+        * {
+          -webkit-user-select: text !important;
+          user-select: text !important;
+        }
+        /* Keep gradients and special effects */
+        .zebra-text {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+        /* Reduce spacing for print */
+        .space-y-8 > * + * {
+          margin-top: 1.5rem !important;
+        }
+        .space-y-6 > * + * {
+          margin-top: 1rem !important;
+        }
+        /* Compact grid layouts */
+        .grid {
+          gap: 1rem !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.32.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

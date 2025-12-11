@@ -1,0 +1,5 @@
+{
+  "name": "DJ Minimalist PressKit AI",
+  "description": "A minimalist Electronic Press Kit (EPK) for DJs featuring a dark aesthetic, bio, gallery, and an AI-powered image editor using Gemini 2.5 Flash Image to enhance low-res press photos.",
+  "requestFramePermissions": []
+}
