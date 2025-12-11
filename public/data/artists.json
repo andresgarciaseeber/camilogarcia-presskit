@@ -1,0 +1,370 @@
+{
+  "artists": {
+    "camilo-garcia": {
+      "id": "camilo-garcia",
+      "slug": "camilo-garcia",
+      "name": "Camilo García",
+      "birthYear": 1971,
+      "birthPlace": "Buenos Aires",
+      "languages": ["es", "en"],
+      "defaultLanguage": "es",
+      "location": "Buenos Aires",
+      "social": {
+        "spotify": "https://open.spotify.com/intl-es/artist/7m1c4h1YmipNM0GwKEkb5H?si=anmD9xUlTWaCvZNwQrEnwg",
+        "soundcloud": "https://soundcloud.com/camilo-martin-garcia-ii",
+        "instagram": "https://www.instagram.com/camilogarcia1971/",
+        "drive": "https://drive.google.com/drive/folders/1jq9u3zaHCeVn4YpSjya7drFqus9DqMVM"
+      },
+      "images": {
+        "cover": "/portada.jpg",
+        "gallery": [
+          { "id": 1, "url": "/1.jpg" },
+          { "id": 2, "url": "/2.jpg" },
+          { "id": 3, "url": "/3.jpg" },
+          { "id": 4, "url": "/4.jpg" },
+          { "id": 5, "url": "/5.jpg" },
+          { "id": 6, "url": "/6.jpg" },
+          { "id": 7, "url": "/7.jpg" },
+          { "id": 8, "url": "/8.jpg" },
+          { "id": 9, "url": "/9.jpg" }
+        ]
+      },
+      "content": {
+        "es": {
+          "tagline": "DJ & Productor",
+          "subtitle": "Universal Music, De Konstrut, Oxytech.",
+          "description": "Del melodic house al indie dance pasando por el progressive house.",
+          "specialMention": "Host oficial Moto GP Argentina (2021-2023).",
+          "genres": ["Indie Dance", "Progressive House", "Melodic Techno"],
+          "bio": {
+            "paragraphs": [
+              "Camilo García es un DJ y productor argentino con más de una década de trayectoria en la escena electrónica. Su sonido fusiona el indie dance con el house progresivo, el techno y el house melódico con algunos elementos del synth-wave. Sus atmósferas intrigantes y envolventes lo ha llevado a ser escuchado en más de 89 países según datos de Spotify y Soundcloud.",
+              "Con lanzamientos en sellos como Universal Music, De Konstrut y Oxytech, entre otros.",
+              "Camilo García ha tenido una extensa trayectoria como periodista de radio y TV. Sin embargo en los últimos 12 años ha consolidado una presencia de sostenido crecimiento dentro de la industria musical. Su rebeldía creativa para volverse inclasificable, la combina con una gran técnica a la hora de ejecutar un set al que suele agregarle sintetizadores en vivo.",
+              "Algunos de sus tracks han recibido el support de artistas como Øostil, Kevin Di Serna o Mariano Mellino por citar algunos."
+            ],
+            "quote": "Bailar es como reírse con el cuerpo",
+            "origin": "Buenos Aires, 1971",
+            "styles": "Indie Dance, Progressive House, Melodic Techno",
+            "supportArtists": ["Øostil", "Kevin Di Serna", "Mariano Mellino"]
+          },
+          "music": {
+            "sectionTitle": "Discografía",
+            "sectionSubtitle": "Tracks, remixes y lanzamientos",
+            "featuredReleases": [
+              {
+                "id": "holidays-remix",
+                "title": "Holidays (Camilo García Remix)",
+                "artist": "León Larregui",
+                "label": "Universal Music",
+                "year": 2024,
+                "type": "Remix",
+                "spotifyUrl": "https://open.spotify.com/intl-es/track/2RUsWCBmcjsBUr6YSXQ3zq?si=cc7e8160c09d49bd"
+              },
+              {
+                "id": "scoundrel",
+                "title": "Scoundrel",
+                "artist": "Camilo García",
+                "label": "De Konstrut",
+                "year": 2023,
+                "type": "Original",
+                "spotifyUrl": "https://open.spotify.com/intl-es/track/5elCAYNAwIaendTbi0ZPGZ?si=f6cd41619eb84b10"
+              },
+              {
+                "id": "wandering-cowboy",
+                "title": "Wandering Cowboy",
+                "artist": "Camilo García",
+                "label": "Oxytech",
+                "year": 2022,
+                "type": "Original",
+                "spotifyUrl": "https://open.spotify.com/intl-es/track/5lDUW5Od241vfYMO0bdtdF?si=7bdc32ac6b47496a"
+              },
+              {
+                "id": "tonys-spiral",
+                "title": "Tony's Spiral",
+                "artist": "Camilo García",
+                "label": "Nube Music",
+                "year": 2021,
+                "type": "Original",
+                "spotifyUrl": "https://open.spotify.com/intl-es/track/2nNnmdKbB3JNn2P8fOafYl?si=af3f179af0bd4aad"
+              }
+            ],
+            "remixes": [
+              {
+                "id": "la-pregunta-remix",
+                "title": "La Pregunta (Camilo García Remix)",
+                "artist": "Babasónicos",
+                "plays": "+19k plays",
+                "soundcloudUrl": "https://soundcloud.com/camilo-martin-garcia-ii/babasonicos-la-pregunta-camilo-garcia-remix-final-mix"
+              }
+            ],
+            "labels": [
+              "Universal Music",
+              "De Konstrut",
+              "Oxytech",
+              "Nube Music",
+              "Logia Records",
+              "Musicon",
+              "Louv"
+            ],
+            "platforms": ["SoundCloud", "Beatport", "Apple Music", "YouTube"]
+          },
+          "gallery": {
+            "title": "Galería de Prensa",
+            "subtitle": "Imágenes Promocionales & Live Sets",
+            "ctaText": "Ir al Drive",
+            "disclaimer": "* Uso autorizado únicamente para prensa y promoción de eventos."
+          },
+          "rider": {
+            "title": "Rider Técnico",
+            "subtitle": "Requerimientos para presentaciones en vivo",
+            "technical": {
+              "title": "Equipamiento Técnico",
+              "setup": {
+                "title": "Setup Técnico",
+                "items": [
+                  "Mixer: Pioneer DJM-900NXS2 o superior",
+                  "CDJs: 2x Pioneer CDJ-3000 NX o CDJ-3000 o CDJ-2000NXS2",
+                  "Monitores de escenario de calidad profesional",
+                  "Iluminación programable sincronizada",
+                  "Pantallas background LEDs"
+                ]
+              }
+            },
+            "hospitality": {
+              "title": "Hospitalidad",
+              "backstage": {
+                "title": "Backstage",
+                "items": [
+                  "Backstage privado para el artista y 2 personas adicionales",
+                  "Toallas limpias y amenities básicos",
+                  "Acceso a WiFi de alta velocidad"
+                ]
+              },
+              "catering": {
+                "title": "Catering",
+                "items": [
+                  "6 botellas de agua mineral (sin gas)",
+                  "Frutas frescas de estación",
+                  "Café y té",
+                  "Frutos secos",
+                  "3 energizantes",
+                  "3 cervezas",
+                  "3 gaseosas Coca Cola Zero + Fernet Branca"
+                ]
+              }
+            },
+            "disclaimer": "* Este rider es orientativo. Los detalles finales se acordarán según las características del evento."
+          },
+          "booking": {
+            "title": "Contacto",
+            "subtitle": "Booking • Management • Colaboraciones",
+            "management": {
+              "title": "Management",
+              "name": "Eduardo Polito",
+              "phone": "+54 9 11 5387-5891"
+            },
+            "bookingPromo": {
+              "title": "Booking & Promo",
+              "email": "gcamilomartin@gmail.com"
+            },
+            "socialMedia": {
+              "title": "Redes Sociales",
+              "instagram": "@camilogarcia1971",
+              "soundcloud": "SoundCloud",
+              "spotify": "Spotify"
+            }
+          },
+          "ui": {
+            "nav": {
+              "bio": "Bio",
+              "music": "Música",
+              "gallery": "Prensa",
+              "rider": "Rider",
+              "contact": "Contacto"
+            },
+            "downloadEPK": "Descargar EPK",
+            "listenOnSpotify": "Escuchar en Spotify →",
+            "listenOnSoundcloud": "Escuchar en SoundCloud →",
+            "alsoAvailableOn": "También disponible en",
+            "recordLabels": "Sellos Discográficos",
+            "streaming": "Streaming",
+            "featuredReleases": "Lanzamientos Destacados",
+            "remixesCollaborations": "Remixes & Colaboraciones",
+            "supportArtists": "Support de Artistas",
+            "origin": "Origen",
+            "styles": "Estilos",
+            "biography": "Biografía"
+          }
+        },
+        "en": {
+          "tagline": "DJ & Producer",
+          "subtitle": "Universal Music, De Konstrut, Oxytech.",
+          "description": "From melodic house to indie dance through progressive house.",
+          "specialMention": "Official Host Moto GP Argentina (2021-2023).",
+          "genres": ["Indie Dance", "Progressive House", "Melodic Techno"],
+          "bio": {
+            "paragraphs": [
+              "Camilo García is an Argentinian DJ and producer with over a decade of experience in the electronic scene. His sound fuses indie dance with progressive house, techno and melodic house with some synth-wave elements. His intriguing and immersive atmospheres have led him to be heard in more than 89 countries according to Spotify and Soundcloud data.",
+              "With releases on labels such as Universal Music, De Konstrut and Oxytech, among others.",
+              "Camilo García has had an extensive career as a radio and TV journalist. However, in the last 12 years he has consolidated a steadily growing presence within the music industry. His creative rebellion to become unclassifiable, he combines with great technique when executing a set to which he usually adds live synthesizers.",
+              "Some of his tracks have received support from artists such as Øostil, Kevin Di Serna or Mariano Mellino to name a few."
+            ],
+            "quote": "Dancing is like laughing with your body",
+            "origin": "Buenos Aires, 1971",
+            "styles": "Indie Dance, Progressive House, Melodic Techno",
+            "supportArtists": ["Øostil", "Kevin Di Serna", "Mariano Mellino"]
+          },
+          "music": {
+            "sectionTitle": "Discography",
+            "sectionSubtitle": "Tracks, remixes and releases",
+            "featuredReleases": [
+              {
+                "id": "holidays-remix",
+                "title": "Holidays (Camilo García Remix)",
+                "artist": "León Larregui",
+                "label": "Universal Music",
+                "year": 2024,
+                "type": "Remix",
+                "spotifyUrl": "https://open.spotify.com/intl-es/track/2RUsWCBmcjsBUr6YSXQ3zq?si=cc7e8160c09d49bd"
+              },
+              {
+                "id": "scoundrel",
+                "title": "Scoundrel",
+                "artist": "Camilo García",
+                "label": "De Konstrut",
+                "year": 2023,
+                "type": "Original",
+                "spotifyUrl": "https://open.spotify.com/intl-es/track/5elCAYNAwIaendTbi0ZPGZ?si=f6cd41619eb84b10"
+              },
+              {
+                "id": "wandering-cowboy",
+                "title": "Wandering Cowboy",
+                "artist": "Camilo García",
+                "label": "Oxytech",
+                "year": 2022,
+                "type": "Original",
+                "spotifyUrl": "https://open.spotify.com/intl-es/track/5lDUW5Od241vfYMO0bdtdF?si=7bdc32ac6b47496a"
+              },
+              {
+                "id": "tonys-spiral",
+                "title": "Tony's Spiral",
+                "artist": "Camilo García",
+                "label": "Nube Music",
+                "year": 2021,
+                "type": "Original",
+                "spotifyUrl": "https://open.spotify.com/intl-es/track/2nNnmdKbB3JNn2P8fOafYl?si=af3f179af0bd4aad"
+              }
+            ],
+            "remixes": [
+              {
+                "id": "la-pregunta-remix",
+                "title": "La Pregunta (Camilo García Remix)",
+                "artist": "Babasónicos",
+                "plays": "+19k plays",
+                "soundcloudUrl": "https://soundcloud.com/camilo-martin-garcia-ii/babasonicos-la-pregunta-camilo-garcia-remix-final-mix"
+              }
+            ],
+            "labels": [
+              "Universal Music",
+              "De Konstrut",
+              "Oxytech",
+              "Nube Music",
+              "Logia Records",
+              "Musicon",
+              "Louv"
+            ],
+            "platforms": ["SoundCloud", "Beatport", "Apple Music", "YouTube"]
+          },
+          "gallery": {
+            "title": "Press Gallery",
+            "subtitle": "Promotional Images & Live Sets",
+            "ctaText": "Go to Drive",
+            "disclaimer": "* Authorized use only for press and event promotion."
+          },
+          "rider": {
+            "title": "Technical Rider",
+            "subtitle": "Requirements for live performances",
+            "technical": {
+              "title": "Technical Equipment",
+              "setup": {
+                "title": "Technical Setup",
+                "items": [
+                  "Mixer: Pioneer DJM-900NXS2 or higher",
+                  "CDJs: 2x Pioneer CDJ-3000 NX or CDJ-3000 or CDJ-2000NXS2",
+                  "Professional quality stage monitors",
+                  "Synchronized programmable lighting",
+                  "LED background screens"
+                ]
+              }
+            },
+            "hospitality": {
+              "title": "Hospitality",
+              "backstage": {
+                "title": "Backstage",
+                "items": [
+                  "Private backstage for the artist and 2 additional people",
+                  "Clean towels and basic amenities",
+                  "High-speed WiFi access"
+                ]
+              },
+              "catering": {
+                "title": "Catering",
+                "items": [
+                  "6 bottles of mineral water (no gas)",
+                  "Fresh seasonal fruits",
+                  "Coffee and tea",
+                  "Dried fruits",
+                  "3 energy drinks",
+                  "3 beers",
+                  "3 Coca Cola Zero sodas + Fernet Branca"
+                ]
+              }
+            },
+            "disclaimer": "* This rider is indicative. Final details will be agreed according to the characteristics of the event."
+          },
+          "booking": {
+            "title": "Contact",
+            "subtitle": "Booking • Management • Collaborations",
+            "management": {
+              "title": "Management",
+              "name": "Eduardo Polito",
+              "phone": "+54 9 11 5387-5891"
+            },
+            "bookingPromo": {
+              "title": "Booking & Promo",
+              "email": "gcamilomartin@gmail.com"
+            },
+            "socialMedia": {
+              "title": "Social Media",
+              "instagram": "@camilogarcia1971",
+              "soundcloud": "SoundCloud",
+              "spotify": "Spotify"
+            }
+          },
+          "ui": {
+            "nav": {
+              "bio": "Bio",
+              "music": "Music",
+              "gallery": "Press",
+              "rider": "Rider",
+              "contact": "Contact"
+            },
+            "downloadEPK": "Download EPK",
+            "listenOnSpotify": "Listen on Spotify →",
+            "listenOnSoundcloud": "Listen on SoundCloud →",
+            "alsoAvailableOn": "Also available on",
+            "recordLabels": "Record Labels",
+            "streaming": "Streaming",
+            "featuredReleases": "Featured Releases",
+            "remixesCollaborations": "Remixes & Collaborations",
+            "supportArtists": "Artist Support",
+            "origin": "Origin",
+            "styles": "Styles",
+            "biography": "Biography"
+          }
+        }
+      }
+    }
+  }
+}

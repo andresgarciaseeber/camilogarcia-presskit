@@ -1,12 +1,17 @@
 import React from 'react';
+import { useArtist } from '../context/ArtistContext';
 
 export const Music: React.FC = () => {
+  const { artist, content } = useArtist();
+
+  if (!artist || !content) return null;
+
   return (
     <section id="music" className="min-h-screen py-16 px-6 max-w-6xl mx-auto border-t border-zinc-900">
       <div className="mb-8">
-        <h2 className="text-4xl font-black uppercase tracking-tighter text-white mb-2">Discografía</h2>
+        <h2 className="text-4xl font-black uppercase tracking-tighter text-white mb-2">{content.music.sectionTitle}</h2>
         <p className="text-zinc-400 font-mono text-xs uppercase tracking-widest">
-          Tracks, remixes y lanzamientos
+          {content.music.sectionSubtitle}
         </p>
       </div>
 
@@ -15,82 +20,30 @@ export const Music: React.FC = () => {
         <div>
           <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-indigo-500 mb-4 flex items-center gap-2">
             <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
-            Lanzamientos Destacados
+            {content.ui.featuredReleases}
           </h3>
 
           <div className="space-y-3">
-              <div className="bg-zinc-900/50 border border-zinc-800 p-3 rounded hover:border-indigo-900 transition-colors group">
+            {content.music.featuredReleases.map((release) => (
+              <div key={release.id} className="bg-zinc-900/50 border border-zinc-800 p-3 rounded hover:border-indigo-900 transition-colors group">
                 <div className="flex justify-between items-start mb-2">
                   <div>
-                    <h4 className="text-white font-bold text-base group-hover:text-indigo-400 transition-colors">Holidays (Camilo García Remix)</h4>
-                    <p className="text-zinc-400 text-sm font-mono">León Larregui • Universal Music • 2024</p>
+                    <h4 className="text-white font-bold text-base group-hover:text-indigo-400 transition-colors">{release.title}</h4>
+                    <p className="text-zinc-400 text-sm font-mono">{release.artist} • {release.label} • {release.year}</p>
                   </div>
-                  <span className="text-[10px] bg-zinc-700/50 text-zinc-300 px-2 py-1 rounded font-bold uppercase">Remix</span>
+                  <span className={`text-[10px] px-2 py-1 rounded font-bold uppercase ${release.type === 'Original' ? 'bg-indigo-900/50 text-indigo-300' : 'bg-zinc-700/50 text-zinc-300'}`}>{release.type}</span>
                 </div>
                 <a
-                  href="https://open.spotify.com/intl-es/track/2RUsWCBmcjsBUr6YSXQ3zq?si=cc7e8160c09d49bd"
+                  href={release.spotifyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-indigo-400 hover:text-indigo-300 transition-colors print:text-zinc-400"
                 >
-                  Escuchar en Spotify →
+                  {content.ui.listenOnSpotify}
                 </a>
               </div>
-
-              <div className="bg-zinc-900/50 border border-zinc-800 p-3 rounded hover:border-indigo-900 transition-colors group">
-                <div className="flex justify-between items-start mb-2">
-                  <div>
-                    <h4 className="text-white font-bold text-base group-hover:text-indigo-400 transition-colors">Scoundrel</h4>
-                    <p className="text-zinc-400 text-sm font-mono">De Konstrut • 2023</p>
-                  </div>
-                  <span className="text-[10px] bg-indigo-900/50 text-indigo-300 px-2 py-1 rounded font-bold uppercase">Original</span>
-                </div>
-                <a
-                  href="https://open.spotify.com/intl-es/track/5elCAYNAwIaendTbi0ZPGZ?si=f6cd41619eb84b10"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-indigo-400 hover:text-indigo-300 transition-colors print:text-zinc-400"
-                >
-                  Escuchar en Spotify →
-                </a>
-              </div>
-
-              <div className="bg-zinc-900/50 border border-zinc-800 p-3 rounded hover:border-indigo-900 transition-colors group">
-                <div className="flex justify-between items-start mb-2">
-                  <div>
-                    <h4 className="text-white font-bold text-base group-hover:text-indigo-400 transition-colors">Wandering Cowboy</h4>
-                    <p className="text-zinc-400 text-sm font-mono">Oxytech • 2022</p>
-                  </div>
-                  <span className="text-[10px] bg-indigo-900/50 text-indigo-300 px-2 py-1 rounded font-bold uppercase">Original</span>
-                </div>
-                <a
-                  href="https://open.spotify.com/intl-es/track/5lDUW5Od241vfYMO0bdtdF?si=7bdc32ac6b47496a"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-indigo-400 hover:text-indigo-300 transition-colors print:text-zinc-400"
-                >
-                  Escuchar en Spotify →
-                </a>
-              </div>
-
-              <div className="bg-zinc-900/50 border border-zinc-800 p-3 rounded hover:border-indigo-900 transition-colors group">
-                <div className="flex justify-between items-start mb-2">
-                  <div>
-                    <h4 className="text-white font-bold text-base group-hover:text-indigo-400 transition-colors">Tony's Spiral</h4>
-                    <p className="text-zinc-400 text-sm font-mono">Nube Music • 2021</p>
-                  </div>
-                  <span className="text-[10px] bg-indigo-900/50 text-indigo-300 px-2 py-1 rounded font-bold uppercase">Original</span>
-                </div>
-                <a
-                  href="https://open.spotify.com/intl-es/track/2nNnmdKbB3JNn2P8fOafYl?si=af3f179af0bd4aad"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-indigo-400 hover:text-indigo-300 transition-colors print:text-zinc-400"
-                >
-                  Escuchar en Spotify →
-                </a>
-              </div>
-            </div>
+            ))}
+          </div>
         </div>
 
         {/* Spotify & Streaming */}
@@ -98,11 +51,11 @@ export const Music: React.FC = () => {
           <div>
             <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-indigo-500 mb-4 flex items-center gap-2">
               <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
-              Streaming
+              {content.ui.streaming}
             </h3>
 
             <a
-              href="https://open.spotify.com/intl-es/track/2GgkaI7cfIzU5zTzekJnYN"
+              href={artist.social.spotify}
               target="_blank"
               rel="noopener noreferrer"
               className="block bg-gradient-to-br from-green-500/10 to-green-700/10 border border-green-900/50 p-4 rounded hover:border-green-500 transition-all duration-300 group print:hidden"
@@ -122,47 +75,24 @@ export const Music: React.FC = () => {
             </a>
 
             <div className="bg-zinc-900/50 border border-zinc-800 p-3 rounded mt-3 print:hidden">
-              <p className="text-[10px] text-zinc-400 uppercase tracking-widest mb-2">También disponible en</p>
+              <p className="text-[10px] text-zinc-400 uppercase tracking-widest mb-2">{content.ui.alsoAvailableOn}</p>
               <div className="flex flex-wrap gap-2">
-                <span className="text-xs bg-zinc-800 text-zinc-400 px-2 py-1 rounded-full font-mono">SoundCloud</span>
-                <span className="text-xs bg-zinc-800 text-zinc-400 px-2 py-1 rounded-full font-mono">Beatport</span>
-                <span className="text-xs bg-zinc-800 text-zinc-400 px-2 py-1 rounded-full font-mono">Apple Music</span>
-                <span className="text-xs bg-zinc-800 text-zinc-400 px-2 py-1 rounded-full font-mono">YouTube</span>
+                {content.music.platforms.map((platform, index) => (
+                  <span key={index} className="text-xs bg-zinc-800 text-zinc-400 px-2 py-1 rounded-full font-mono">{platform}</span>
+                ))}
               </div>
             </div>
           </div>
 
           <div className="bg-zinc-900/50 border border-zinc-800 p-3 rounded print:hidden">
-            <p className="text-[10px] text-zinc-400 uppercase tracking-widest mb-2">Sellos Discográficos</p>
+            <p className="text-[10px] text-zinc-400 uppercase tracking-widest mb-2">{content.ui.recordLabels}</p>
             <ul className="text-xs text-zinc-300 space-y-1">
-              <li className="flex items-center gap-2">
-                <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
-                Universal Music
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
-                De Konstrut
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
-                Oxytech
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
-                Nube Music
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
-                Logia Records
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
-                Musicon
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
-                Louv
-              </li>
+              {content.music.labels.map((label, index) => (
+                <li key={index} className="flex items-center gap-2">
+                  <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
+                  {label}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -170,24 +100,26 @@ export const Music: React.FC = () => {
 
       {/* Remixes Section */}
       <div className="mt-6 pt-6 border-t border-zinc-900">
-        <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 mb-4">Remixes & Colaboraciones</h3>
-        <div className="bg-zinc-900/50 border border-zinc-800 p-3 rounded hover:border-indigo-900 transition-colors">
-          <div className="flex justify-between items-start mb-2">
-            <div>
-              <h4 className="text-white font-bold text-base">La Pregunta (Camilo García Remix)</h4>
-              <p className="text-zinc-400 text-sm font-mono">Babasónicos</p>
+        <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 mb-4">{content.ui.remixesCollaborations}</h3>
+        {content.music.remixes.map((remix) => (
+          <div key={remix.id} className="bg-zinc-900/50 border border-zinc-800 p-3 rounded hover:border-indigo-900 transition-colors">
+            <div className="flex justify-between items-start mb-2">
+              <div>
+                <h4 className="text-white font-bold text-base">{remix.title}</h4>
+                <p className="text-zinc-400 text-sm font-mono">{remix.artist}</p>
+              </div>
+              <span className="text-[10px] bg-zinc-700/50 text-zinc-300 px-2 py-1 rounded font-bold uppercase">{remix.plays}</span>
             </div>
-            <span className="text-[10px] bg-zinc-700/50 text-zinc-300 px-2 py-1 rounded font-bold uppercase">+19k plays</span>
+            <a
+              href={remix.soundcloudUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-indigo-400 hover:text-indigo-300 transition-colors"
+            >
+              {content.ui.listenOnSoundcloud}
+            </a>
           </div>
-          <a
-            href="https://soundcloud.com/camilo-martin-garcia-ii/babasonicos-la-pregunta-camilo-garcia-remix-final-mix"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-indigo-400 hover:text-indigo-300 transition-colors"
-          >
-            Escuchar en SoundCloud →
-          </a>
-        </div>
+        ))}
       </div>
     </section>
   );
