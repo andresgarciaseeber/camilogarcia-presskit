@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
 
     return {
-        base: '/camilogarcia-presskit/',   // AGREGADO PARA GITHUB PAGES
+        base: mode === 'production' ? '/camilogarcia-presskit/' : '/',
 
         server: {
             port: 3000,

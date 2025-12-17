@@ -6,6 +6,7 @@ import { Rider } from './components/Rider';
 import { Booking } from './components/Booking';
 import { Button } from './components/Button';
 import { Logo } from './components/Logo';
+import { LanguageSwitcher } from './components/LanguageSwitcher';
 import { ArtistProvider, useArtist } from './context/ArtistContext';
 import html2pdf from 'html2pdf.js';
 
@@ -45,7 +46,74 @@ function AppContent() {
     return `Buenos Aires — ${mes} — ${año}`;
   };
 
-  const handleDownloadPDF = () => {
+  const handleDownloadLogos = () => {
+    // Crear contenedor para los logos
+    const logoContainer = document.createElement('div');
+    logoContainer.style.width = '210mm';
+    logoContainer.style.padding = '20mm';
+    logoContainer.style.backgroundColor = 'white';
+    logoContainer.style.fontFamily = 'Arial, sans-serif';
+
+    logoContainer.innerHTML = `
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h1 style="font-size: 24px; margin-bottom: 10px; color: black;">Camilo García - Logos</h1>
+        <p style="font-size: 12px; color: #666;">Logos oficiales para uso en prensa y promoción</p>
+      </div>
+
+      <!-- Logo Positivo (Negro sobre Blanco) -->
+      <div style="margin-bottom: 60px; page-break-inside: avoid;">
+        <h2 style="font-size: 16px; margin-bottom: 20px; color: black; border-bottom: 2px solid black; padding-bottom: 10px;">Logo Positivo</h2>
+        <div style="background: white; padding: 40px; border: 1px solid #ddd; display: flex; justify-content: center; align-items: center; min-height: 200px;">
+          ${document.querySelector('.logo-svg')?.innerHTML || ''}
+        </div>
+        <p style="font-size: 10px; color: #666; margin-top: 10px;">Uso: Fondos claros y blancos</p>
+      </div>
+
+      <!-- Logo Negativo (Blanco sobre Negro) -->
+      <div style="page-break-inside: avoid;">
+        <h2 style="font-size: 16px; margin-bottom: 20px; color: black; border-bottom: 2px solid black; padding-bottom: 10px;">Logo Negativo</h2>
+        <div style="background: black; padding: 40px; border: 1px solid #ddd; display: flex; justify-content: center; align-items: center; min-height: 200px;">
+          <div style="color: white;">
+            ${document.querySelector('.logo-svg')?.innerHTML.replace(/fill="[^"]*"/g, 'fill="white"') || ''}
+          </div>
+        </div>
+        <p style="font-size: 10px; color: #666; margin-top: 10px;">Uso: Fondos oscuros y negros</p>
+      </div>
+
+      <div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center;">
+        <p style="font-size: 10px; color: #666;">© ${new Date().getFullYear()} Camilo García. Todos los derechos reservados.</p>
+      </div>
+    `;
+
+    document.body.appendChild(logoContainer);
+
+    const opt = {
+      margin: 0,
+      filename: 'Camilo_Garcia_Logos.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: {
+        scale: 2,
+        useCORS: true,
+        logging: false,
+        backgroundColor: '#ffffff'
+      },
+      jsPDF: {
+        unit: 'mm',
+        format: 'a4',
+        orientation: 'portrait'
+      }
+    };
+
+    html2pdf()
+      .set(opt)
+      .from(logoContainer)
+      .save()
+      .then(() => {
+        document.body.removeChild(logoContainer);
+      });
+  };
+
+  /* const handleDownloadPDF_OLD = () => {
     // Crear un contenedor temporal con los estilos de print aplicados
     const printContainer = document.createElement('div');
     printContainer.className = 'print-mode';
@@ -68,13 +136,10 @@ function AppContent() {
 
       .print-mode { background: black; color: white; }
 
-      /* Ocultar todas las clases hidden en print */
       .print-mode .hidden { display: none !important; }
 
-      /* Mostrar elementos con print:flex */
       .print-mode .hidden.print\\:flex { display: flex !important; }
 
-      /* Mostrar la galería de imágenes en print */
       .print-mode .gallery-images-grid { display: grid !important; }
       .print-mode .gallery-image-item { display: block !important; }
 
@@ -114,7 +179,6 @@ function AppContent() {
         vertical-align: middle !important;
         min-height: fit-content !important;
       }
-      /* Resetear estilos para círculos decorativos */
       .print-mode span.rounded-full,
       .print-mode span[class*="rounded-full"] {
         padding-top: 0 !important;
@@ -159,10 +223,12 @@ function AppContent() {
         document.body.removeChild(printContainer);
         document.head.removeChild(style);
       });
-  };
+  }; */
   return (
     <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black font-sans">
-      
+      {/* Language Switcher */}
+      <LanguageSwitcher />
+
       {/* Header / Nav */}
       <nav className="fixed top-0 w-full z-50 mix-blend-difference px-6 py-6 flex justify-between items-center backdrop-blur-sm bg-black/10 print:hidden">
         <h1 className="text-xl font-bold tracking-tighter uppercase glitch-hover cursor-default">
@@ -178,9 +244,9 @@ function AppContent() {
         <Button
           variant="outline"
           className="text-[10px] py-2 px-4 border-zinc-600 hover:bg-white hover:text-black"
-          onClick={handleDownloadPDF}
+          onClick={handleDownloadLogos}
         >
-          {content.ui.downloadEPK}
+          {language === 'es' ? 'LOGOS' : 'LOGOS'}
         </Button>
       </nav>
 

@@ -5,7 +5,7 @@ export const Logo: React.FC = () => {
     <svg
       viewBox="0 0 850 220"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-full h-auto"
+      className="w-full h-auto logo-svg"
       style={{ maxHeight: '40vh' }}
       preserveAspectRatio="xMinYMin meet"
     >
